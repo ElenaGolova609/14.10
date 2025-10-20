@@ -1,0 +1,49 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+bool Prosto_chel(const std::string& slowo1, const std::string& slowo2) {
+    if (slowo1.length() != slowo2.length()) {
+        return false;
+    }
+    
+    for (auto i = 0; i < slowo1.length(); i++) {
+        if (slowo1[i] != slowo2[i]) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+std::vector<int> Prosto_chel2(const std::vector<int>& input) {
+    return input;
+}
+
+int main(){
+    std::vector<std::string> slowa;
+    std::string word;
+    
+    std::cout << "Введите 2 слова(маленькие буквы):" << std::endl;
+    for (int i = 0; i < 2; i++){
+        std::cin >> word;
+        slowa.push_back(word);
+    }
+    
+    std::cout << "Ваши слова: ";
+    for (const auto& w : slowa){
+        std::cout << w << " ";
+    }
+    std::cout << std::endl;
+    
+    bool result = Prosto_chel(slowa[0], slowa[1]);
+    
+    std::cout << "Строки \"" << slowa[0] << "\" и \"" << slowa[1] << "\" ";
+    if (result) {
+        std::cout << "равны" << std::endl;
+    } else {
+        std::cout << "не равны" << std::endl;
+    }
+    
+    return 0;
+}
