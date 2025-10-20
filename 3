@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cstdint>  
+
+uint64_t stepen(uint64_t a, uint64_t n) {
+    if (n == 0) {
+        return 1;
+    }
+    return a * stepen(a, n - 1);
+}
+
+int main() {
+    uint64_t a, n;
+    
+    std::cout << "Введите число a: ";
+    std::cin >> a;
+    
+    std::cout << "Введите степень n: ";
+    std::cin >> n;
+    
+    uint64_t result = stepen(a, n);
+    std::cout << a << " в степени " << n << " = " << result << std::endl;
+    
+    return 0;
+}
