@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cstdint>  
+#include <string>
+
+int slowa(const std::string& slowo1) {
+    if (slowo1.empty()) { 
+        return 0;
+    }
+    
+    int count = 0;
+    for (int i = 0; i < slowo1.length(); i++) {
+        count++;
+    }
+    return count;
+}
+
+int main() {
+    std::string word;
+    
+    std::cout << "Введите слово: " << std::endl;
+    std::getline(std::cin, word);  // Читаем всю строку
+    
+    int result = slowa(word);
+    
+    std::cout << "В вашем слове: " << result / 2 << " букв" << std::endl;
+    
+    return 0;
+}
